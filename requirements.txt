@@ -1,0 +1,3 @@
+PyP100
+telepot
+pyyaml
