@@ -30,11 +30,11 @@ while True:
             current_w = usage["current_power"] / 1000.0
             logging.info(f"{plug['name']}: {current_w} W")
         except Exception:
-            logging.info("{plug['name']}:   Connection error")
+            logging.info(f"{plug['name']}:   Connection error")
             continue
         if plug["is_on"]:
             if current_w < plug["threshold_down"]:
-                if plug["below_threshold"] < 3:
+                if plug["below_threshold"] < 2:
                     plug["below_threshold"] += 1
                 else:
                     plug["is_on"] = False
